@@ -16,32 +16,31 @@
         <div class="box">
             <component :is="current"></component>
             <div class="btns">
-                <button @click="up" v-if="isShow">上一步</button>
-                <button @click="down" v-if="!isShow">下一步</button>
-                <button @click="reset">重置</button>
+                <button @click="up" v-if="isUp">上一步</button>
+                <button @click="down" v-if="isDown">下一步</button>
             </div>
         </div>
     </script>
     <script language="javascript" type="text/x-template" id="child1">
-        <div>
+        <div class="child">
             <h3>1、请问您的性别是：</h3>
-            <input type="radio" name="sex">男
-            <input type="radio" name="sex">女
+            <input type="radio" name="sex">男 <br>
+            <input type="radio" name="sex">女 <br>
             <input type="radio" name="sex" checked="checked">保密
         </div>
     </script>
     <script language="javascript" type="text/x-template" id="child2">
-        <div>
+        <div class="child">
             <h3>2、请选择您的兴趣爱好：</h3>
-            <input type="chexkbox" name="book">看书
-            <input type="chexkbox" name="swim">游泳
-            <input type="chexkbox" name="run">跑步
-            <input type="chexkbox" name="movie">看电影
-            <input type="chexkbox" name="music">听音乐
+            <input type="checkbox" name="book">看书 <br>
+            <input type="checkbox" name="swim">游泳 <br>
+            <input type="checkbox" name="run">跑步 <br>
+            <input type="checkbox" name="movie">看电影 <br>
+            <input type="checkbox" name="music">听音乐
         </div>
     </script>
     <script language="javascript" type="text/x-template" id="child3">
-        <div>
+        <div class="child">
             <h3>3、请介绍一下自己：</h3>
             <textarea name="" id="" cols="30" rows="10" placeholder="不少于100字"></textarea>
         </div>

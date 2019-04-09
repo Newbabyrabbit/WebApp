@@ -1,10 +1,12 @@
 @charset "UTF-8";
 
 .box{
+    box-sizing:border-box;
     width:100%;
-    /* height:500px; */
     padding:10px;
     border:2px solid #eee;
     border-radius:5px;
-    background:#eee;
+}
+.child{
+    height:500px;
 }
