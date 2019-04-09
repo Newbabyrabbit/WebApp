@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML5调查问卷</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+    <div id="app">
+        <questions></questions>
+    </div>
+    <script language="javascript" type="text/javascript" src="js/vue.js"></script>
+    <script language="javascript" type="text/x-template" id="parent">
+        <div class="box">
+            <component :is="current"></component>
+            <div class="btns">
+                <button @click="up" v-if="isShow">上一步</button>
+                <button @click="down" v-if="!isShow">下一步</button>
+                <button @click="reset">重置</button>
+            </div>
+        </div>
+    </script>
+    <script language="javascript" type="text/x-template" id="child1">
+        <div>
+            <h3>1、请问您的性别是：</h3>
+            <input type="radio" name="sex">男
+            <input type="radio" name="sex">女
+            <input type="radio" name="sex" checked="checked">保密
+        </div>
+    </script>
+    <script language="javascript" type="text/x-template" id="child2">
+        <div>
+            <h3>2、请选择您的兴趣爱好：</h3>
+            <input type="chexkbox" name="book">看书
+            <input type="chexkbox" name="swim">游泳
+            <input type="chexkbox" name="run">跑步
+            <input type="chexkbox" name="movie">看电影
+            <input type="chexkbox" name="music">听音乐
+        </div>
+    </script>
+    <script language="javascript" type="text/x-template" id="child3">
+        <div>
+            <h3>3、请介绍一下自己：</h3>
+            <textarea name="" id="" cols="30" rows="10" placeholder="不少于100字"></textarea>
+        </div>
+    </script>
+    <script language="javascript" type="text/javascript" src="js/questionnaire.js"></script>
+    <script language="javascript" type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
